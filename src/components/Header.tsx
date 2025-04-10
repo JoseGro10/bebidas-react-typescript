@@ -12,6 +12,7 @@ export default function Header() {
                 <nav className='flex gap-4'>
                     <Link to="/" className="text-white uppercase font-bold">Inicio</Link>
                     <Link to="/favoritos" className="text-white uppercase font-bold">Favoritos</Link>
+                    <Link to="/gika" className=''></Link>
                 </nav>
             </div>
         </div>
