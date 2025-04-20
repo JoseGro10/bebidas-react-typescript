@@ -57,6 +57,13 @@ export default function Header() {
                                 className="p-3 w-full rounded-lg focus:outline-none bg-white"
                                 >
                                 <option value="">-- Selecciona una categoria --</option>
+                                {
+                                     useAppStore((state) => state.categories.drinks).map((category) => (
+                                    <option key={category.strCategory} value={category.strCategory}>
+                                        {category.strCategory}
+                                    </option>      
+                                    ))
+                                } 
                             </select>
                         </div>
                         <input 
