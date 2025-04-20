@@ -9,6 +9,7 @@ export default function Header() {
     const isHome = useMemo(() => location.pathname === '/', [location.pathname])
 
     const fetchCategories = useAppStore((state) => state.fetchCategories)
+    const categories = useAppStore((state) => state.categories)
 
     useEffect(() => {
         fetchCategories()
@@ -58,12 +59,12 @@ export default function Header() {
                                 >
                                 <option value="">-- Selecciona una categoria --</option>
                                 {
-                                     useAppStore((state) => state.categories.drinks).map((category) => (
-                                    <option key={category.strCategory} value={category.strCategory}>
-                                        {category.strCategory}
-                                    </option>      
-                                    ))
-                                } 
+                                    categories.drinks.map((category) => (
+                                    <option
+                                        key={category.strCategory} 
+                                        value={category.strCategory}
+                                    >{category.strCategory} </option>      
+                                ))} 
                             </select>
                         </div>
                         <input 
