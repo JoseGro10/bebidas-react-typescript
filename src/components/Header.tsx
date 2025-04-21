@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useMemo, useState } from 'react'
+import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import "tailwindcss"; 
 import { useAppStore } from '../stores/useAppStore';
@@ -27,6 +27,20 @@ export default function Header() {
         })
     }
 
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+       
+        //Validar los campos
+        if(Object.values(searchFilters).includes('')) {
+            alert('Todos los campos son obligatorios')
+            return
+        }
+
+        //Consultar las recetas
+        
+    }   
+
+
 
     return (
         <header className={isHome ? 'bg-[url(/bg.jpg)] bg-center bg-cover' : 'bg-slate-800'}>
@@ -48,8 +62,11 @@ export default function Header() {
 
 
                 { isHome && (
-                    <form className="md:w-1/2 2xl:w-1/3 bg-orange-400 my-32 p-10 rounded-lg 
-                        shadow-lg space-y-6">
+                    <form 
+                        className="md:w-1/2 2xl:w-1/3 bg-orange-400 my-32 p-10 rounded-lg 
+                        shadow-lg space-y-6"
+                        onSubmit={handleSubmit}
+                    >
                         <div className='space-y-4'>
                             <label 
                                 htmlFor="ingredient" 
