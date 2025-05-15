@@ -20,3 +20,12 @@ export async function getRecipes(filters: SearchFilter){
         return result.data
     } 
 }
+
+/*export async function getRecipes(filters: SearchFilter){
+    const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${filters.category}&i=${filters.ingredient}`
+    const { data } = await axios.get(url)
+    const result = DrinksAPIResponse.safeParse(data)
+    if (result.success) { 
+        return result.data
+    } 
+}*/
