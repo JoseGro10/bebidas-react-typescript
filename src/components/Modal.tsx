@@ -68,8 +68,24 @@ export default function Modal() {
                                     </DialogTitle>
                                     {renderIngredients()}
                                     <DialogTitle as="h3" className="text-gray-900 text-2xl font-extrabold my-5">
-                                        {selectedRecipe.strInstructions}
+                                        Instrucciones
                                     </DialogTitle>
+                                    <p className="text-lg">{selectedRecipe.strInstructions}</p>
+                                    <div className='mt-5 flex justify-between gap-4'>
+                                        <button
+                                            type='button'
+                                            className='w-full rounded bg-gray-600 p-3 font-bold uppercase text-white shadow hover:bg-gray-500'
+                                            onClick={closeModal}
+                                        >Cerrar</button>
+                                    </div>
+
+                                    <div className='mt-5 flex justify-between gap-4'>
+                                        <button
+                                            type='button'
+                                            className='w-full rounded bg-orange-600 p-3 font-bold uppercase text-white shadow hover:bg-orange-500'
+                                            onClick={() => handleClickFavorite()}
+                                        >Agregar a favoritos</button>
+                                    </div>
                                 </DialogPanel>
                             </TransitionChild>
                         </div>
