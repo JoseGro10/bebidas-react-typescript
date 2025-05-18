@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.3",
     "@tailwindcss/vite": "^4.0.0",
     "axios": "^1.8.4",
     "bebidas-react-typescript": "file:",
