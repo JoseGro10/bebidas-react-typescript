@@ -1,5 +1,5 @@
-import { Dialog, Transition } from '@headlessui/react';
-import { Fragment, useState } from 'react';
+import { Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from '@headlessui/react';
+import { Fragment } from 'react';
 import { useAppStore } from '../stores/useAppStore';
 
 export default function Modal() {
@@ -11,7 +11,7 @@ export default function Modal() {
         <>
             <Transition appear show={modal} as={Fragment}>
                 <Dialog as="div" className="relative z-10" onClose={closeModal}>
-                    <Transition.Child
+                    <TransitionChild
                         as={Fragment}
                         enter="ease-out duration-300"
                         enterFrom="opacity-0"
@@ -21,11 +21,11 @@ export default function Modal() {
                         leaveTo="opacity-0"
                     >
                         <div className="fixed inset-0 bg-black bg-opacity-70" />
-                    </Transition.Child>
+                    </TransitionChild>
 
                     <div className="fixed inset-0 overflow-y-auto">
                         <div className="flex min-h-full items-center justify-center p-4 text-center">
-                            <Transition.Child
+                            <TransitionChild
                                 as={Fragment}
                                 enter="ease-out duration-300"
                                 enterFrom="opacity-0 scale-95"
@@ -34,18 +34,18 @@ export default function Modal() {
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl sm:p-6" >
-                                    <Dialog.Title as="h3" className="text-gray-900 text-4xl font-extrabold my-5 text-center">
+                                <DialogPanel className="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl sm:p-6" >
+                                    <DialogTitle as="h3" className="text-gray-900 text-4xl font-extrabold my-5 text-center">
                                         Titulo Aquí
-                                    </Dialog.Title>
-                                    <Dialog.Title as="h3" className="text-gray-900 text-2xl font-extrabold my-5">
+                                    </DialogTitle>
+                                    <DialogTitle as="h3" className="text-gray-900 text-2xl font-extrabold my-5">
                                         Ingredientes y Cantidades
-                                    </Dialog.Title>
-                                    <Dialog.Title as="h3" className="text-gray-900 text-2xl font-extrabold my-5">
+                                    </DialogTitle>
+                                    <DialogTitle as="h3" className="text-gray-900 text-2xl font-extrabold my-5">
                                         Instrucciones
-                                    </Dialog.Title>
-                                </Dialog.Panel>
-                            </Transition.Child>
+                                    </DialogTitle>
+                                </DialogPanel>
+                            </TransitionChild>
                         </div>
                     </div>
                 </Dialog>
