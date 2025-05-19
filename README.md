@@ -1,50 +1,51 @@
-# React + TypeScript + Vite
+# Buscador de Bebidas - React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación web para buscar recetas de bebidas utilizando la [API de TheCocktailDB](https://www.thecocktaildb.com/). Permite buscar por nombre o ingrediente, filtrar por categoría, ver detalles de cada bebida y guardar recetas favoritas. Está construido con React, TypeScript, Zustand para el manejo de estado, Tailwind CSS para estilos y Zod para validaciones.
 
-Currently, two official plugins are available:
+## Características principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Búsqueda de recetas:** Filtra bebidas por nombre, ingrediente y categoría.
+- **Vista de detalles:** Muestra ingredientes, cantidades e instrucciones de preparación.
+- **Favoritos:** Permite agregar y eliminar recetas favoritas, que se guardan en el almacenamiento local.
+- **Notificaciones:** Muestra mensajes de éxito o error al usuario.
+- **Diseño responsivo:** Interfaz adaptada a dispositivos móviles y escritorio.
 
-## Expanding the ESLint configuration
+## Estructura de ramas en Git
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **main:** Rama principal, contiene la versión estable y lista para producción.
+- **develop:** Rama de desarrollo, donde se integran nuevas funcionalidades antes de pasar a main.
+- **feature/\***: Ramas para nuevas características o mejoras (por ejemplo, `feature/agregar-busqueda-avanzada`).
+- **fix/\***: Ramas para corrección de errores (por ejemplo, `fix/arreglar-modal`).
 
-- Configure the top-level `parserOptions` property like this:
+> **Nota:** Las ramas `feature/*` y `fix/*` se deben fusionar primero en `develop` y luego, tras pruebas, en `main`.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Instalación y uso
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1. Clona el repositorio:
+   ```sh
+   git clone <url-del-repositorio>
+   cd bebidas-react-typescript
+   ```
+2. Instala las dependencias:
+   ```sh
+   npm install
+   ```
+3. Inicia el servidor de desarrollo:
+   ```sh
+   npm run dev
+   ```
+4. Abre [http://localhost:5173](http://localhost:5173) en tu navegador.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Tecnologías utilizadas
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- React
+- TypeScript
+- Vite
+- Zustand
+- Tailwind CSS
+- Zod
+- Axios
+
+---
+
+¡Contribuciones y sugerencias son bienvenidas!
