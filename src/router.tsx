@@ -4,6 +4,8 @@ import { lazy, Suspense } from "react"
 
 const IndexPage = lazy(() => import("./views/IndexPage"))
 const FavoritesPage = lazy(() => import("./views/FavoritesPages"))
+const GenerateAI = lazy(() => import("./views/GenerateAI"))
+
 
 export default function router() {
   return (
@@ -17,6 +19,11 @@ export default function router() {
           <Route path="/favoritos" element={
             <Suspense fallback="Cargando...">
               <FavoritesPage />
+            </Suspense>
+          } />
+          <Route path="/generate" element={
+            <Suspense fallback="Cargando...">
+              <GenerateAI />
             </Suspense>
           } />
         </Route>
