@@ -12,6 +12,7 @@
   "dependencies": {
     "@headlessui/react": "^2.2.3",
     "@heroicons/react": "^2.2.0",
+    "@openrouter/ai-sdk-provider": "^0.4.6",
     "@tailwindcss/vite": "^4.0.0",
     "axios": "^1.8.4",
     "bebidas-react-typescript": "file:",
