@@ -9,8 +9,6 @@ export default function GenerateAI() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    console.log('submit')
-
     const form = new FormData(e.currentTarget)
     const prompt = form.get('prompt') as string
 
